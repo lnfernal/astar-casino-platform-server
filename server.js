@@ -39,16 +39,16 @@ app.use("/api/admin", admin);
 app.use("/api/history", history);
 
 //blockchain Handle 
-// blockchainHandle();
+blockchainHandle();
 
-app.use(express.static(__dirname + "/build"));
-app.get('/*', function (req, res) {
-	res.sendFile(__dirname + '/build/index.html', function (err) {
-		if (err) {
-			res.status(500).send(err)
-		}
-	})
-})
+// app.use(express.static(__dirname + "/build"));
+// app.get('/*', function (req, res) {
+// 	res.sendFile(__dirname + '/build/index.html', function (err) {
+// 		if (err) {
+// 			res.status(500).send(err)
+// 		}
+// 	})
+// })
 
 const port = require("./config/config").port;
 app.listen(port, () => console.log(`Server running on port ${port}`));
